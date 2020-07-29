@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import logo from './../assets/logo.svg'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 // import { auth, firestore } from './firebase'
@@ -27,6 +27,8 @@ const RegistrationForm = (props) => {
     auth.createUserWithEmailAndPassword(email, password)
       .then((response) => {
         settoken(response.user.refreshToken)
+        props.getToken(response)
+
         localStorage.setItem('token', response.user.refreshToken);
 
         console.log('the data is here to register ', response)
@@ -36,20 +38,7 @@ const RegistrationForm = (props) => {
       });
   };
 
-  useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        // User is signed in.
-        console.log(' register user is logged in', user)
-      } else {
-        // User is signed out.
-        console.log('register user is looged out', user)
-      }
-    });
-    return () => {
 
-    }
-  }, [token])
 
 
   return (

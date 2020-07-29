@@ -1,21 +1,10 @@
 import React from 'react'
-import { Button, Container, Divider, Grid, Header, Image } from 'semantic-ui-react'
-import Menu from './Menu'
+import { Button, Container, Divider, Grid, Header, Image, Search } from 'semantic-ui-react'
+import AppMenu from './AppMenu'
 import { auth, firestore } from './../firebase'
 
 
-const GridLayout = () => {
-
-  function signout() {
-    console.log("Hi there, signingout !");
-    auth.signOut().then(function (data) {
-      console.log('signedout', data)
-      // Sign-out successful.
-    }).catch(function (error) {
-      console.log('errror exist in signout', error)
-      // An error happened.
-    });
-  }
+const Home = (props) => {
 
   return (
 
@@ -24,18 +13,14 @@ const GridLayout = () => {
 
 
       <Container text>
-        <Header as='h3'>Text Container</Header>
-        <Menu />
-        <p>
-          Text containers <b>do not need to use grids</b> and help simplify basic page layouts.
-      </p>
+
 
         <Grid>
           <Grid.Row columns={1}>
             <Grid.Column>
 
-              <div><Button primary onClick={signout}> Sign Out</Button></div>
-
+              {/* <div><Button primary onClick={signout}> Sign Out</Button></div> */}
+              <AppMenu />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -44,4 +29,4 @@ const GridLayout = () => {
     </div>
   )
 }
-export default GridLayout
+export default Home

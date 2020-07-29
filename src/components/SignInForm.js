@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // import logo from './logo.svg';
 import logo from './../assets/logo.svg'
 
@@ -23,6 +23,7 @@ const SignInForm = (props) => {
 
     auth.signInWithEmailAndPassword(email, password).then((data) => {
       settoken(data.user)
+      props.getToken(data.user)
       localStorage.setItem('token', data.user.refreshToken);
       console.log('the data is here ', data)
     }).catch(error => {
@@ -32,20 +33,20 @@ const SignInForm = (props) => {
   };
 
 
-  useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        // User is signed in.
-        console.log('signin user is logged in ', user.refreshToken)
-      } else {
-        // User is signed out.
-        console.log('sign user is looged out', user)
-      }
-    });
-    return () => {
+  // useEffect(() => {
+  //   auth.onAuthStateChanged(user => {
+  //     if (user) {
+  //       // User is signed in.
+  //       console.log('signin user is logged in ', user.refreshToken)
+  //     } else {
+  //       // User is signed out.
+  //       console.log('sign user is looged out', user)
+  //     }
+  //   });
+  //   return () => {
 
-    }
-  }, [token])
+  //   }
+  // }, [token])
 
 
 

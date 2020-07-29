@@ -20,29 +20,15 @@ import RegistrationForm from './RegistrationForm'
 // } from 'react-router-dom';
 
 
-const Home = (props) => {
+const LandingPage = (props) => {
 
-  // const [token, settoken] = useState('')
+  const [login, setlogin] = useState(true)
   const [activeItem, setactiveItem] = useState('home')
   // const [speed, setspeed] = useState(10)
-  const [login, setlogin] = useState(true)
+  const [haveAnAccount, sethaveAnAccount] = useState(true)
   // const [register, setregister] = useState(false)
-  // const [token, settoken] = useState('')
+  const [token, settoken] = useState('')
 
-  // useEffect(() => {
-  //   auth.onAuthStateChanged(user => {
-  //     if (user) {
-  //       // User is signed in.
-  //       console.log('signin user is logged in ', user.refreshToken)
-  //     } else {
-  //       // User is signed out.
-  //       console.log('sign user is looged out', user)
-  //     }
-  //   });
-  //   return () => {
-
-  //   }
-  // }, [token])
 
 
   // const handleItemClick = name => {
@@ -57,7 +43,7 @@ const Home = (props) => {
 
     <div>
 
-      {login ? <SignInForm login={setlogin} /> : <RegistrationForm login={setlogin} />}
+      {login ? <SignInForm login={setlogin} getToken={props.getToken} /> : <RegistrationForm login={setlogin} getToken={props.getToken} />}
 
 
     </div>
@@ -117,4 +103,4 @@ const Home = (props) => {
   )
 }
 
-export default Home
+export default LandingPage
