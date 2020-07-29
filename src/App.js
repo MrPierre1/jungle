@@ -5,6 +5,7 @@ import './App.css';
 import LandingPage from './components/LandingPage'
 // import RegistrationForm from './componentsRegistrationForm'
 import { auth, firestore } from './firebase'
+import Home from './components/Home'
 
 import { Button, Form, Grid, Header, Image, Message, Menu, Segment } from 'semantic-ui-react'
 // import { BrowserRouter, Route, Link, Router } from "react-router-dom";
@@ -64,7 +65,7 @@ function App() {
     <div className="App">
 
       {/* {token ? <div><Button primary onClick={signout}> Sign Out</Button><p>I'm here</p></div> : <LandingPage />} */}
-      {token ? <div><Button primary onClick={signout}> Sign Out</Button><p>I'm here</p></div> : <LandingPage />}
+      {token ? <Home /> : <LandingPage />}
 
       {/* 
 <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
