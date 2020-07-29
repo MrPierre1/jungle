@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+// import logo from './assets/logo.svg';
 import './App.css';
-import SignInForm from './SignInForm'
-import LandingPage from './LandingPage'
-import RegistrationForm from './RegistrationForm'
+// import SignInForm from './components/SignInForm'
+import LandingPage from './components/LandingPage'
+// import RegistrationForm from './componentsRegistrationForm'
 import { auth, firestore } from './firebase'
 
 import { Button, Form, Grid, Header, Image, Message, Menu, Segment } from 'semantic-ui-react'
 // import { BrowserRouter, Route, Link, Router } from "react-router-dom";
 // import * as firebase from 'firebase';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   Redirect,
 
-} from 'react-router-dom';
+// } from 'react-router-dom';
 
 
 function App() {

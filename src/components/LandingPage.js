@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './../App.css';
 import SignInForm from './SignInForm'
 import LandingPage from './LandingPage'
 import RegistrationForm from './RegistrationForm'
-import { auth, firestore } from './firebase'
+import { auth, firestore } from './../firebase'
 
 import { Button, Form, Grid, Header, Image, Message, Menu, Segment } from 'semantic-ui-react'
 // import { BrowserRouter, Route, Link, Router } from "react-router-dom";
