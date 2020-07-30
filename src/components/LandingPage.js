@@ -23,12 +23,12 @@ import RegistrationForm from './RegistrationForm'
 const LandingPage = (props) => {
 
   const [login, setlogin] = useState(true)
-  const [activeItem, setactiveItem] = useState('home')
+  // const [activeItem, setactiveItem] = useState('home')
   // const [speed, setspeed] = useState(10)
-  const [haveAnAccount, sethaveAnAccount] = useState(true)
+  // const [haveAnAccount, sethaveAnAccount] = useState(true)
   // const [register, setregister] = useState(false)
-  const [token, settoken] = useState('')
-
+  // const [token, settoken] = useState('')
+  // 
 
 
   // const handleItemClick = name => {

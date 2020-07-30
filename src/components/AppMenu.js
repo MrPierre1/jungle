@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Container, Divider, Grid, Header, Image, Input, Menu, Search } from 'semantic-ui-react';
+import { Header, Image, Input, Menu, Search } from 'semantic-ui-react';
 
-import { auth, firestore } from './../firebase'
+import { auth } from './../firebase'
 import logo from './../assets/logo.svg'
 
 

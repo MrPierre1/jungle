@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import logo from './../assets/logo.svg'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 // import { auth, firestore } from './firebase'
-import { auth, firestore } from './../firebase'
+import { auth } from './../firebase'
 
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 
 const RegistrationForm = (props) => {
