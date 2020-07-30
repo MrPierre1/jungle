@@ -38,6 +38,7 @@ const ItemCard = (props) => {
       <Container image >
         <Divider />
 
+
         <Card>
           <Image src={logo} wrapped ui={false} />
           <Card.Content>

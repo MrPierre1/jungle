@@ -4,6 +4,7 @@ import AppMenu from './AppMenu'
 // import { auth, firestore } from './../firebase'
 import { AuthContext } from './../Providers/AuthProvider';
 import ItemContainer from './ItemContainer';
+import LeftSearchFilters from './LeftSearchFilters';
 // import ItemContainer from './ItemContainer';
 
 
@@ -36,6 +37,7 @@ const Home = (props) => {
 
 
         <AppMenu />
+
         <ItemContainer />
         {/* 
             </Grid.Column>
