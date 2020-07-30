@@ -24,7 +24,7 @@ import { AuthProvider } from './Providers/AuthProvider';
 function App() {
   const [loggedIn, setloggedIn] = useState(false);
   // const [register, setregister] = useState(false);
-  const [token, settoken] = useState('');
+  const [token, settoken] = useState(true);
   const [haveAnAccount, sethaveAnAccount] = useState(false);
 
   useEffect(

@@ -69,7 +69,6 @@ const RegistrationForm = (props) => {
 
               onChange={(e) => setpassword(e.target.value)}
 
-
             />
 
             <Button color='teal' fluid size='large'>

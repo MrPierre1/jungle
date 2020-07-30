@@ -3,21 +3,24 @@ import { Container, Grid } from 'semantic-ui-react'
 import AppMenu from './AppMenu'
 // import { auth, firestore } from './../firebase'
 import { AuthContext } from './../Providers/AuthProvider';
+import ItemContainer from './ItemContainer';
+// import ItemContainer from './ItemContainer';
+
 
 
 
 const Home = (props) => {
   const authContext = useContext(AuthContext);
 
-  useEffect(() => {
-    console.log('all of the values in order from home', authContext.user,
-      authContext.authenticated,
-      authContext.setUser,
-      authContext.loadingAuthState, 'Authcontenxt', authContext)
-    return () => {
+  // useEffect(() => {
+  //   console.log('all of the values in order from home', authContext.user,
+  //     authContext.authenticated,
+  //     authContext.setUser,
+  //     authContext.loadingAuthState, 'Authcontenxt', authContext)
+  //   return () => {
 
-    }
-  })
+  //   }
+  // })
   return (
 
 
@@ -27,15 +30,17 @@ const Home = (props) => {
       <Container text>
 
 
-        <Grid>
+        {/* <Grid>
           <Grid.Row columns={1}>
-            <Grid.Column>
+            <Grid.Column> */}
 
-              {/* <div><Button primary onClick={signout}> Sign Out</Button></div> */}
-              <AppMenu />
+
+        <AppMenu />
+        <ItemContainer />
+        {/* 
             </Grid.Column>
-          </Grid.Row>
-        </Grid>
+          </Grid.Row> */}
+        {/* </Grid> */}
 
       </Container>
     </div>
