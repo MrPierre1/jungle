@@ -28,23 +28,42 @@ const Home = (props) => {
     <div>
 
 
-      <Container text>
+      {/* <Container text> */}
 
 
-        {/* <Grid>
-          <Grid.Row columns={1}>
-            <Grid.Column> */}
+      <Grid>
+        <Grid.Row columns={3}>
+          <Grid.Column >
 
 
-        <AppMenu />
+          </Grid.Column>
+          <Grid.Column >
+            <AppMenu />
 
-        <ItemContainer />
-        {/* 
-            </Grid.Column>
-          </Grid.Row> */}
-        {/* </Grid> */}
+          </Grid.Column>
+          <Grid.Column >
 
-      </Container>
+
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row columns={1}>
+
+          <Grid.Column>
+
+            <ItemContainer />
+
+          </Grid.Column>
+        </Grid.Row>
+
+
+
+
+
+
+      </Grid>
+
+      {/* </Container> */}
     </div>
   )
 }

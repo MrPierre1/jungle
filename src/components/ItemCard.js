@@ -27,7 +27,7 @@ const ItemCard = (props) => {
   const extra = (
     <a>
       <Icon name='star' />
-      {props.data.info.rating}
+      {props.data.rating}
     </a>
   )
 
@@ -35,23 +35,24 @@ const ItemCard = (props) => {
   return (
 
     <div>
-      <Container image >
+
+      <Container >
         <Divider />
 
 
         <Card>
           <Image src={logo} wrapped ui={false} />
           <Card.Content>
-            <Card.Header>{props.data.info.title}</Card.Header>
+            <Card.Header>{props.data.title}</Card.Header>
             <Card.Meta>
               <span className='date'>Home</span>
             </Card.Meta>
             <Card.Description>
-              {props.data.info.description}
+              {props.data.description}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <Rating icon='star' defaultRating={props.data.info.rating} maxRating={5} />
+            <Rating icon='star' defaultRating={props.data.rating} maxRating={5} />
           </Card.Content>
         </Card>
 

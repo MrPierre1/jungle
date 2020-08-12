@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Header, Image, Input, Menu, Search } from 'semantic-ui-react';
+import { Header, Image, Input, Menu, Search, Icon } from 'semantic-ui-react';
 
 import { auth } from './../firebase'
 import logo from './../assets/logo.svg'
@@ -64,6 +64,18 @@ const AppMenu = () => {
             active={activeItem === 'logout'}
             onClick={signout}
           />
+          <Menu.Item
+            name='cart'
+            active={activeItem === 'cart'}
+            onClick={signout}
+          >
+            <Header as='h2' color='teal' textAlign='center'>
+              <Icon name='shopping cart' color='black' size='small' />
+            </Header>
+          </Menu.Item>
+
+
+
         </Menu.Menu>
       </Menu>
     </div>
