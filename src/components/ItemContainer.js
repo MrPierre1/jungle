@@ -28,16 +28,25 @@ const ItemContainer = (props) => {
             {console.log(typeof productData, 'productData in home', productData)}
 
 
+            {productData ? (
 
-            {productData.map(function (doc) {
-              // { console.log('product data ', item) }
 
-              return (
-                <Grid.Column key={doc.id}>
-                  <ItemCard data={doc.data()} />
-                </Grid.Column>
-              );
-            })}
+              productData.map(function (item) {
+                { console.log('product data ', item) }
+
+                return (
+                  <Grid.Column key={item.info.itemID}>
+                    <ItemCard data={item} />
+                  </Grid.Column>
+                );
+              })
+
+
+            ) :
+              <div>loading...</div>
+            }
+
+
           </Grid.Row>
         </Grid>
       </Container>

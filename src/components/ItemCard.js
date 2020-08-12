@@ -14,18 +14,18 @@ const ItemCard = (props) => {
     }
   }, [])
 
-  // const extra = (
-  //   <a>
-  //     <Icon name='star' />
-  //     {props.data.info.rating}
-  //   </a>
-  // )
+  const extra = (
+    <a>
+      <Icon name='star' />
+      {props.data.info.rating}
+    </a>
+  )
 
 
   return (
 
     <div>
-      {/* <Container  >
+      <Container  >
         <Divider />
 
 
@@ -49,7 +49,7 @@ const ItemCard = (props) => {
 
 
 
-      </Container> */}
+      </Container>
     </div>
   )
 }

@@ -18,6 +18,7 @@ import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
   return (
+
     <AuthProvider>
       <DataProvider>
 
