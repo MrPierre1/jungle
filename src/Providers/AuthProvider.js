@@ -1,6 +1,6 @@
 // src/AuthProvider.tsx
-import React, { useEffect, useState, useContext, createContext } from "react";
-import { auth, firestore } from './../firebase';
+import React, { useEffect, useState } from "react";
+import { auth } from './../firebase';
 
 export const AuthContext = React.createContext();
 
@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
+            console.log('I see the user', user)
             setCurrentUser(user)
             setPending(false)
         });

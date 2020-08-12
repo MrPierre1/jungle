@@ -1,70 +1,33 @@
-import React, { useContext, useEffect } from 'react'
-import { Container, Grid } from 'semantic-ui-react'
-import AppMenu from './AppMenu'
-// import { auth, firestore } from './../firebase'
-import { AuthContext } from './../Providers/AuthProvider';
+import React, { useContext } from 'react';
+import { Grid } from 'semantic-ui-react';
+import AppMenu from './AppMenu';
+
 import ItemContainer from './ItemContainer';
-import LeftSearchFilters from './LeftSearchFilters';
-// import ItemContainer from './ItemContainer';
-
-
+import { DataContext } from '../Providers/DataProvider';
 
 
 const Home = (props) => {
-  const authContext = useContext(AuthContext);
+  const { productData } = useContext(DataContext);
 
-  // useEffect(() => {
-  //   console.log('all of the values in order from home', authContext.user,
-  //     authContext.authenticated,
-  //     authContext.setUser,
-  //     authContext.loadingAuthState, 'Authcontenxt', authContext)
-  //   return () => {
-
-  //   }
-  // })
   return (
-
-
     <div>
-
-
-      {/* <Container text> */}
-
-
       <Grid>
         <Grid.Row columns={3}>
-          <Grid.Column >
-
-
-          </Grid.Column>
-          <Grid.Column >
+          <Grid.Column />
+          <Grid.Column>
             <AppMenu />
-
           </Grid.Column>
-          <Grid.Column >
-
-
-          </Grid.Column>
+          <Grid.Column />
         </Grid.Row>
 
         <Grid.Row columns={1}>
-
           <Grid.Column>
-
+            {/* {console.log(typeof productData, 'productData in home', productData)} */}
             <ItemContainer />
-
           </Grid.Column>
         </Grid.Row>
-
-
-
-
-
-
       </Grid>
-
-      {/* </Container> */}
     </div>
-  )
-}
-export default Home
+  );
+};
+export default Home;
