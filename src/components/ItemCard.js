@@ -26,7 +26,7 @@ const ItemCard = (props) => {
 
 
         <Card>
-          {console.log('data exist today', props)}
+
           <Image src={props.data.image} wrapped ui={false} />
           <Card.Content>
             <Card.Header>{props.data.name}</Card.Header>
@@ -38,16 +38,12 @@ const ItemCard = (props) => {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            {/* <Rating icon='star' defaultRating={props.data.customerReviewAverage} maxRating={5} /> */}
 
             <a href="#">
               <Rating defaultRating={props.data.customerReviewAverage} maxRating={5} disabled />
               {props.data.customerReviewCount}
             </a>
-            {/* <a style={{ marginRight: '100px' }}> */}
-            {/* <Icon name='star' /> */}
 
-            {/* </a> */}
           </Card.Content>
         </Card>
 
