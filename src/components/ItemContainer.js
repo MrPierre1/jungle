@@ -1,23 +1,20 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Grid, } from 'semantic-ui-react';
 
-import data from './../assets/data.json';
+// import data from './../assets/data.json';
 import ItemCard from './ItemCard';
 import { DataContext } from '../Providers/DataProvider';
+import { firestore } from '../firebase'
+import bby from 'bestbuy';
+// var bby = require('bestbuy')('G0JV5AgPvEEirid2FhdVC7bI');
+var bb = bby('G0JV5AgPvEEirid2FhdVC7bI')
 
-
-
-
-const ItemContainer = (props) => {
+const ItemContainer = ({ searchResult }) => {
   const { productData } = useContext(DataContext);
+  const [bbData, setbbData] = useState(null)
+  const [queryData, setQueryData] = useState('')
 
 
-  useEffect(() => {
-    console.log(typeof productData, 'its data', productData)
-    return () => {
-
-    }
-  }, [])
 
 
   return (
@@ -25,17 +22,16 @@ const ItemContainer = (props) => {
       <Container>
         <Grid>
           <Grid.Row columns={4}>
-            {console.log(typeof productData, 'productData in home', productData)}
+
+            {console.log('queryData', searchResult)}
+
+            {searchResult ? (
 
 
-            {productData ? (
-
-
-              productData.map(function (item) {
-                { console.log('product data ', item) }
+              searchResult.products.map(function (item) {
 
                 return (
-                  <Grid.Column key={item.info.itemID}>
+                  <Grid.Column key={item.sku}>
                     <ItemCard data={item} />
                   </Grid.Column>
                 );
@@ -43,7 +39,7 @@ const ItemContainer = (props) => {
 
 
             ) :
-              <div>loading...</div>
+              <div>Loading...</div>
             }
 
 
