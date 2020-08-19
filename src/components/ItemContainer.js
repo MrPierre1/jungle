@@ -32,6 +32,7 @@ const ItemContainer = ({ searchResult }) => {
 
                 return (
                   <Grid.Column key={item.sku}>
+
                     <ItemCard data={item} />
                   </Grid.Column>
                 );

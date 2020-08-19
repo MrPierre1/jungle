@@ -26,13 +26,33 @@ const Home = (props) => {
 
     const getBbData = (search) => {
       console.log('fatscreentv', search)
-      bb.products(`categoryPath.name="DVR"`,
-        { show: 'sku,name,salePrice,thumbnailImage,image,shortDescription,customerReviewAverage,customerReviewCount,customerTopRated,department', sort: 'salePrice.asc' })
+
+      bb.products(`(search=television)`,
+        //  { show: 'all', pageSize: 1 })
+        { show: 'sku,name,salePrice,thumbnailImage,image,shortDescription,customerReviewAverage,customerReviewCount,customerTopRated,department,salePrice', page: 1, pageSize: 30, sort: 'salePrice.asc' })
+
         .then(function (data) {
-          console.log('bbdata', data);
 
           setproductData(data)
+          console.log('data was found in home', data)
+          if (data.total === 0) console.log('No products found');
         })
+        .catch(function (err) {
+          console.warn(err);
+        });
+
+
+      // bb.products(`categoryPath.name="All Flat-Screen TVs"`,
+      // bb.products(`categoryPath.name="maria"`,
+
+      //   // { show: 'sku,name,salePrice,thumbnailImage,image,shortDescription,customerReviewAverage,customerReviewCount,customerTopRated,department', sort: 'salePrice.asc' })
+      //   { show: 'all' })
+
+      //   .then(function (data) {
+      //     console.log('bbdata', data);
+
+      //     setproductData(data)
+      //   })
     }
 
     return getBbData()
@@ -42,14 +62,33 @@ const Home = (props) => {
 
   const handleSearchSubmit = (searchWords) => {
 
+    setshowresults(true)
+    setsearch(searchWords)
 
-    console.log('fatscreentv', searchWords)
-    bb.products(`categoryPath.name="${searchWords}"`,
-      { show: 'sku,name,salePrice,thumbnailImage,image,shortDescription,customerReviewAverage,customerReviewCount,customerTopRated,department', sort: 'salePrice.asc' })
+    bb.products(`(search=${searchWords})`,
+
+      { show: 'sku,name,salePrice,thumbnailImage,image,shortDescription,customerReviewAverage,customerReviewCount,customerTopRated,department,salePrice', page: 2, sort: 'salePrice.asc' })
+
       .then(function (data) {
-        console.log('bbdata', data);
         setproductData(data)
+
+
       })
+      .catch(function (err) {
+        console.warn(err);
+      });
+
+
+
+    // console.log('fatscreentv', searchWords)
+    // bb.products(`categoryPath.name="${searchWords}"`,
+    //   { show: 'sku,name,salePrice,thumbnailImage,image,shortDescription,customerReviewAverage,customerReviewCount,customerTopRated,department,salePrice', sort: 'salePrice.asc' })
+    //   .then(function (data) {
+    //     console.log('bbdata', data);
+    //     setproductData(data)
+
+
+    //   })
 
   }
 
