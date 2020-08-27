@@ -15,6 +15,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SignIn from './components/SignIn';
 
 import PrivateRoute from './components/PrivateRoute';
+import dotenv from 'dotenv/config'
+
 
 const App = () => {
   return (

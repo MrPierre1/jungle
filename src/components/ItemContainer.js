@@ -14,6 +14,7 @@ const ItemContainer = ({ searchResult }) => {
   const [bbData, setbbData] = useState(null)
   const [queryData, setQueryData] = useState('')
 
+  // consthandlePaginationChange = (e, { activePage }) => this.setState({ activePage })
 
 
 
@@ -34,6 +35,13 @@ const ItemContainer = ({ searchResult }) => {
                   <Grid.Column key={item.sku}>
 
                     <ItemCard data={item} />
+                    {/* <Grid.Column>
+          <Pagination
+            activePage={activePage}
+            onPageChange={this.handlePaginationChange}
+            totalPages={5}
+          />
+        </Grid.Column> */}
                   </Grid.Column>
                 );
               })

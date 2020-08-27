@@ -7,6 +7,7 @@ import { DataContext } from '../Providers/DataProvider';
 import { auth } from './../firebase';
 import bby from 'bestbuy';
 import AppMenuSearch from './AppMenuSeach';
+import BB_KEY from '../config'
 // var bby = require('bestbuy')('G0JV5AgPvEEirid2FhdVC7bI');
 
 // 1. find way to hid api key
@@ -18,16 +19,16 @@ const Home = (props) => {
   const [search, setsearch] = useState('');
 
   const [showresults, setshowresults] = useState(false)
-  var bb = bby('G0JV5AgPvEEirid2FhdVC7bI')
-  // var bb = bby(process.env.BBKEY)
-  console.log('docnev', process.env.BBKEY)
+  var bb = bby(BB_KEY)
+
   useEffect(() => {
 
 
     const getBbData = (search) => {
       console.log('fatscreentv', search)
 
-      bb.products(`(search=television)`,
+      // bb.products(`(search=television)`,
+      bb.products('customerReviewAverage>=4&customerReviewCount>1500&salePrice>500',
         //  { show: 'all', pageSize: 1 })
         { show: 'sku,name,salePrice,thumbnailImage,image,shortDescription,customerReviewAverage,customerReviewCount,customerTopRated,department,salePrice', page: 1, pageSize: 30, sort: 'salePrice.asc' })
 

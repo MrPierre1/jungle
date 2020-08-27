@@ -1,6 +1,16 @@
 import React, { useState, useCallback } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { auth } from './../firebase';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+import TestHome from './TestHome'
 
 const AppMenu = ({ mySearch }) => {
   const [activeItem, setactiveItem] = useState('home');
@@ -23,24 +33,56 @@ const AppMenu = ({ mySearch }) => {
   };
 
   return (
-    <Menu secondary>
-      <Menu.Item
-        name="account"
-        active={activeItem === 'account'}
-        onClick={handleItemClick}
-      />
-      <Menu.Item
-        name="settings"
-        active={activeItem === 'settings'}
-        onClick={handleItemClick}
-      />
 
-      <Menu.Item
-        name="logout"
-        active={activeItem === 'logout'}
-        onClick={signOut}
-      />
-    </Menu>
+
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </div>
+
+
+      <Menu secondary>
+        <Menu.Item
+
+          name="account"
+          active={activeItem === 'account'}
+          onClick={handleItemClick}
+          as={Link}
+          to="/account"
+
+
+
+
+        />
+        <Menu.Item
+          name="settings"
+          active={activeItem === 'settings'}
+          onClick={handleItemClick}
+          as={Link}
+          to="/settings"
+        />
+
+      </Menu>
+      <Switch>
+        <Route path="/account">
+          <TestHome />
+        </Route>
+        {/* <Route path="/">
+            <Home />
+          </Route> */}
+
+
+      </Switch>
+
+    </Router>
+
   );
 };
 
